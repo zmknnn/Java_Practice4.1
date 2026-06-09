@@ -28,8 +28,7 @@
                 <version>3.13.0</version>
                 <configuration>
                     <release>17</release>
-                    <!-- ВИМКНУТИ обробку анотацій для самого процесора -->
-                    <compilerArgument>-proc:none</compilerArgument>
+                    <proc>none</proc>
                 </configuration>
             </plugin>
         </plugins>
