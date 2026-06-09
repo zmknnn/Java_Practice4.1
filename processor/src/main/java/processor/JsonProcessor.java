@@ -58,7 +58,7 @@ public class JsonProcessor extends AbstractProcessor {
                     boolean isString = fieldType.toString().equals("java.lang.String");
                     boolean isPrimitive = fieldType.getKind().isPrimitive();
 
-                    String getterName = getGetterName(field);
+                    String getterName = getGetter(field);
 
                     serializerLogic.append("        if (!first) sb.append(\",\");\n");
                     serializerLogic.append("        sb.append(\"\\\"" + fieldName + "\\\":\");\n");
@@ -101,7 +101,7 @@ public class JsonProcessor extends AbstractProcessor {
         }
     }
 
-    private String getGetterName(VariableElement field) {
+    private String getGetter(VariableElement field) {
         String fieldName = field.getSimpleName().toString();
         return "get" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
     }
